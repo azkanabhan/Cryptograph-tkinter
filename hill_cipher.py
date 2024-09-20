@@ -80,24 +80,4 @@ def hill_decrypt(ciphertext, key):
     plaintext = plaintext.rstrip('X')
     return plaintext
 
-# Contoh penggunaan
-key_text = "GYBNQKURP" # Matriks kunci untuk Hill Cipher 3x3
 
-def text_to_matrix(text, size=3):
-    numbers = [ord(char) - 65 for char in text]
-    matrix = [numbers[i:i + size] for i in range(0, len(numbers), size)]
-    return matrix
-
-# Konversi teks kunci ke matriks
-key_matrix = text_to_matrix(key_text)
-
-
-plaintext = "HELLO KENALIN AKU ACENG"
-print("===== ENCRYPTION =====")
-ciphertext = hill_encrypt(plaintext, key_matrix)
-print(f"Plaintext: {plaintext}")
-print(f"Ciphertext: {ciphertext}")
-
-print("===== DECRYPTION =====")
-decrypted_text = hill_decrypt(ciphertext, key_matrix)
-print(f"Decrypted Text: {decrypted_text}")
